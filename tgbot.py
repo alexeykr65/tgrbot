@@ -100,32 +100,7 @@ def getint_handler(update, context):
     update.effective_message.reply_text(f'{output.result}')
 
 
-# def getint_handler(update, context):
-#     if not (check_group(update.effective_chat.id, context.bot)):
-#         return
-#     cisco = {
-#         'device_type': 'cisco_ios',
-#         'host': '192.168.30.225',
-#         'port': '22',
-#         'username': 'alex',
-#         'password': 'Cisco123',
-#     }
-#     logger.info("Get query ... from chat_id: {}".format(update.effective_chat.id))
-#     # logger.info(f'{cisco}')
-#     net_connect = ConnectHandler(**cisco)
-#     net_connect.find_prompt()
-#     output = net_connect.send_command("sh version  | utility egrep expr 'IOS|uptime'")
-#     logger.info(f'Output: {output}')
-#     # context.bot.send_message(chat_id=NUM_CHAT, text=f'{output}')
-#     update.effective_message.reply_text(f'{output}')
-
-
 def start_handler(update, context):
-    # update.effective_message.reply_text(f'Привет {update.message.from_user.first_name}! Это приватный чат!')
-    # res = context.bot.getChatMember(NUM_CHAT, '1008829533')
-    # res = context.bot.getChatMember(NUM_CHAT, update.effective_chat.id)
-    # context.bot.send_message(chat_id=NUM_CHAT, text=f'Привет {update.message.from_user.first_name}!')
-    # logger.info("Start: {} ==== {} ====".format(update.effective_chat, res.status))
     logger.info("Start: {} ".format(update.effective_chat))
     if check_group(update.effective_chat.id, context.bot):
         update.effective_message.reply_text(f'Привет {update.message.from_user.first_name}!')
